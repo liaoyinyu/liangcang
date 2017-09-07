@@ -102,6 +102,7 @@ char buf4[7]={0x05,0x90,0x21,0x00,0x00,0x04,0xFF};//读取模块的波特率指令
 //newPkg(1) THPkg={5,0xa0,0x32,0x0cd0,{0}};
 newPkg(1) THPkg={5,0x90,0x20,0x04,0x15,{0}};//温度包格式  目的地址是1504 端口号20
 newPkg(1) humiditypkg={5,0x90,0x81,0x04,0x15,{0}};//注意包格式湿度 目的地址是1504 端口号20
+
 void loopAll()
 { 
 	u16 i;
@@ -289,9 +290,9 @@ void led0_task(void *pdata)
 	while(1)
 	{
 		LED0=0; 
-		delay_ms(1000);
-		LED0=1;
-		delay_ms(1000);
+		delay_ms(500);
+		LED0=0;
+		delay_ms(500);
 	}
 }
 
